@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="blog-wxx">
+    <meta name="keyword"  content="wxx">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          sql的一些知识 - wxx&#39;s_Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://github.com/wxx0105/wxx0105.github.io/2021/10/16/sql的一些知识/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-dark.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-dark.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../../../../img/wallhaven-6oy2ol.jpg')
+                /*post*/
+            
+        
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#sql" title="sql">sql</a>
+                            
+                        </div>
+                        <h1>sql的一些知识</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by wx_x on
+                            2021-10-16
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">4.1k</span> and
+                                Reading Time <span class="post-count">16</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-dark.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-dark.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">wxx</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <a id="more"></a>
+<h1 id="mysql基础语言"><a href="#mysql基础语言" class="headerlink" title="mysql基础语言"></a>mysql基础语言</h1><h2 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h2><p>cmd进入mysql终端：<br>d: 访问d盘mysql源文件<br>cd D:\phpstudy_pro\Extensions\MySQL8.0.12\bin）</p>
+<h2 id="规则："><a href="#规则：" class="headerlink" title="规则："></a>规则：</h2><p>不区分大小写；<br>分号结束一行；<br>SQL 语句中含有字符串的时候，需要像 ‘abc’ 这样，使用英文单引号’将字符串括起来，用来标识这是一个字符串。（时间也是如此）；<br>全英输入(半角字)</p>
+<h2 id="基本语句："><a href="#基本语句：" class="headerlink" title="基本语句："></a>基本语句：</h2><h3 id="1-查看数据库："><a href="#1-查看数据库：" class="headerlink" title="1.查看数据库："></a>1.查看数据库：</h3><p>show databases like ‘数据库名’；例：show databases like ‘mysql’;<br>like从句：<br>    查看完全匹配：SHOW DATABASES LIKE ‘test_db’;<br>    查看名称匹配：SHOW DATABASES LIKE ‘%test%’;<br>    查看结尾匹配：SHOW DATABASES LIKE ‘%db’;<br>    查看开头匹配：SHOW DATABASES LIKE ‘db%’;</p>
+<h3 id="2-创建数据库并查看："><a href="#2-创建数据库并查看：" class="headerlink" title="2.创建数据库并查看："></a>2.创建数据库并查看：</h3><p>create database 数据库名;<br>详细创建：<br>CREATE DATABASE [IF NOT EXISTS] &lt;数据库名&gt;<br>[[DEFAULT] CHARACTER SET &lt;字符集名&gt;] //采用什么语言显示，比如中文gb2312等还有通用方便迁移库的utf8。<br>[[DEFAULT] COLLATE &lt;校对规则名&gt;];</p>
+<h3 id="3-修改字符集以及规则："><a href="#3-修改字符集以及规则：" class="headerlink" title="3.修改字符集以及规则："></a>3.修改字符集以及规则：</h3><p>ALTER DATABASE [数据库名] {<br>[ DEFAULT ] CHARACTER SET &lt;字符集名&gt;<br>[ DEFAULT ] COLLATE &lt;校对规则名&gt;}<br>ps：<br>ALTER DATABASE 用于更改数据库的全局特性。<br>使用 ALTER DATABASE 需要获得数据库 ALTER 权限。<br>数据库名称可以忽略，此时语句对应于默认数据库。<br>CHARACTER SET 子句用于更改默认的数据库字符集。</p>
+<h3 id="4-删除数据库："><a href="#4-删除数据库：" class="headerlink" title="4.删除数据库："></a>4.删除数据库：</h3><p>DROP DATABASE [ IF EXISTS ] &lt;数据库名&gt;</p>
+<h3 id="5-USE-语句用来完成一个数据库到另一个数据库的跳转"><a href="#5-USE-语句用来完成一个数据库到另一个数据库的跳转" class="headerlink" title="5.USE 语句用来完成一个数据库到另一个数据库的跳转"></a>5.USE 语句用来完成一个数据库到另一个数据库的跳转</h3><h3 id="6-活用注释："><a href="#6-活用注释：" class="headerlink" title="6.活用注释："></a>6.活用注释：</h3><h1 id="从结果中删除重复行"><a href="#从结果中删除重复行" class="headerlink" title="从结果中删除重复行"></a>从结果中删除重复行</h1><p>SELECT DISTINCT product_id, purchase_price FROM Product;</p>
+<p>单行注释可以使用—注释符，—注释符后需要加一个空格，注释才能生效。格式如下：<br>— 从结果中删除重复行<br>SELECT DISTINCT product_id, purchase_price FROM Product;</p>
+<p>多行注释使用/<em> </em>/注释符</p>
+<h3 id="7-大小写问题大厂规定："><a href="#7-大小写问题大厂规定：" class="headerlink" title="7.大小写问题大厂规定："></a>7.大小写问题大厂规定：</h3><p>【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线中间只出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称需要慎重考虑。</p>
+<p>8.错误代码:   <a href="http://c.biancheng.net/view/vip_8326.html" target="_blank" rel="noopener">http://c.biancheng.net/view/vip_8326.html</a></p>
+<h2 id="数据’表’基本操作篇："><a href="#数据’表’基本操作篇：" class="headerlink" title="数据’表’基本操作篇："></a>数据’表’基本操作篇：</h2><h3 id="创建表："><a href="#创建表：" class="headerlink" title="创建表："></a>创建表：</h3><p>CREATE TABLE &lt;表名&gt; ([表定义选项])[表选项][分区选项];<br>[表定义选项]的格式为：<br>&lt;列名1&gt; &lt;类型1&gt; [,…] &lt;列名n&gt; &lt;类型n&gt;<br>表名称被指定为 db_name.tbl_name，无论是否有当前数据库，都可以通过这种方式创建<br>使用 CREATE TABLE 创建表时，必须指定以下信息：<br>要创建的表的名称不区分大小写，不能使用SQL语言中的关键字，如DROP、ALTER、INSERT等。<br>数据表中每个列（字段）的名称和数据类型，如果创建多个列，要用逗号隔开。<br>例：完整创建一个表：<br>create database test_wxx;<br>use test_wxx;<br>create table tb_em1<br>(<br>id int(11),<br>name varchar(25),<br>deptID int(11),<br>salary float<br>);<br>show tables;</p>
+<h3 id="修改表："><a href="#修改表：" class="headerlink" title="修改表："></a>修改表：</h3><p>语法格式：alter table &lt;表名&gt; [修改选项];<br>修改选项的语法格式如下：<br>{ ADD COLUMN &lt;列名&gt; &lt;类型&gt;<br>| CHANGE COLUMN &lt;旧列名&gt; &lt;新列名&gt; &lt;新列类型&gt;<br>| ALTER COLUMN &lt;列名&gt; { SET DEFAULT &lt;默认值&gt; | DROP DEFAULT }<br>| MODIFY COLUMN &lt;列名&gt; &lt;类型&gt;<br>| DROP COLUMN &lt;列名&gt;<br>| RENAME TO &lt;新表名&gt;<br>| CHARACTER SET &lt;字符集名&gt;<br>| COLLATE &lt;校对规则名&gt; }</p>
+<h3 id="修改表名："><a href="#修改表名：" class="headerlink" title="修改表名："></a>修改表名：</h3><p>ALTER TABLE &lt;旧表名&gt; RENAME [TO] &lt;新表名&gt;；<br>修改表字符集：ALTER TABLE 表名 [DEFAULT] CHARACTER SET &lt;字符集名&gt; [DEFAULT] COLLATE &lt;校对规则名&gt;;<br>修改字段名称：ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名&gt; &lt;新字段名&gt; &lt;新数据类型&gt;；<br>修改字段数据类型：ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名&gt; &lt;数据类型&gt;<br>删除字段：ALTER TABLE &lt;表名&gt; DROP &lt;字段名&gt;；<br>删除数据表：DROP TABLE [IF EXISTS] 表名1 [ ,表名2, 表名3 …]</p>
+<p>MySQL删除被其它表关联的主表：</p>
+<h3 id="DESCRIBE查勘表结构："><a href="#DESCRIBE查勘表结构：" class="headerlink" title="DESCRIBE查勘表结构："></a>DESCRIBE查勘表结构：</h3><p>以表格的形式展示表结构：<br>DESCRIBE/DESC 语句会以表格的形式来展示表的字段信息，包括字段名、字段数据类型、是否为主键、是否有默认值等。</p>
+<h3 id="MySQL数据表添加字段（三种方式）"><a href="#MySQL数据表添加字段（三种方式）" class="headerlink" title="MySQL数据表添加字段（三种方式）"></a>MySQL数据表添加字段（三种方式）</h3><p>-1.末尾添加字段：ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt;&lt;数据类型&gt;[约束条件];<br>-2.开头：ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt; &lt;数据类型&gt; [约束条件] FIRST<br>-3.中间：ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt; &lt;数据类型&gt; [约束条件] AFTER &lt;已经存在的字段名&gt;;;</p>
+<h3 id="数据表操作语句："><a href="#数据表操作语句：" class="headerlink" title="数据表操作语句："></a>数据表操作语句：</h3><p><a href="http://c.biancheng.net/view/2548.html（" target="_blank" rel="noopener">http://c.biancheng.net/view/2548.html（</a>&lt;&gt;不用打上mysql，为助记符）<br>ps：use切换数据库才可以操作表！<br>例：show tables from dvwa;<br>      use dvwa;<br>      select * from users;</p>
+<h3 id="SELECT-FROM-表名："><a href="#SELECT-FROM-表名：" class="headerlink" title="SELECT * FROM 表名："></a>SELECT * FROM 表名：</h3><p>（使用“<em>”查询表的所有字段）<br>ps：使用“</em>”的优势是，当不知道所需列的名称时，可以通过“*”获取它们。</p>
+<h3 id="查询特定字段："><a href="#查询特定字段：" class="headerlink" title="查询特定字段："></a>查询特定字段：</h3><p>SELECT &lt; 列名 &gt; FROM &lt; 表名 &gt;;<br>SELECT &lt;字段名1&gt;,&lt;字段名2&gt;,&lt;字段名3&gt;…&lt;字段名n&gt; FROM &lt; 表名 &gt;;</p>
+<h3 id="去重："><a href="#去重：" class="headerlink" title="去重："></a>去重：</h3><p>select distinct &lt;字段名&gt; from &lt;表名&gt;;<br>“字段名”为需要消除重复记录的字段名称，多个字段时用逗号隔开。</p>
+<h3 id="设置别名："><a href="#设置别名：" class="headerlink" title="设置别名："></a>设置别名：</h3><p>为表设置别名：&lt;表名&gt; [AS] &lt;别名&gt;<br>为字段名设置别名：&lt;字段名&gt; [AS] &lt;别名&gt;</p>
+<h3 id="限制查询结果："><a href="#限制查询结果：" class="headerlink" title="限制查询结果："></a>限制查询结果：</h3><p>在查询表中出现上万种结果的时候，可以增加表返回的速度，减少给服务器的压力<br>指定初始位置：LIMIT 初始位置，记录数：limit 3,5;<br>不指定初始位置：LIMIT 记录数<br>LIMIT和OFFSET组合使用：LIMIT 记录数 OFFSET 初始位置</p>
+<h3 id="对查询结果排序："><a href="#对查询结果排序：" class="headerlink" title="对查询结果排序："></a>对查询结果排序：</h3><p>ORDER BY &lt;字段名&gt; [ASC|DESC]<br>ps: ASC|DESC：ASC表示字段按升序排序；DESC表示字段按降序排序。其中ASC为默认值。<br>ps：想要全部降序或者升序，必须对每一个关键字进行升降序;<br>ps：在对多个字段进行排序时，排序的第一个字段必须有相同的值，才会对第二个字段进行排序。如果第一个字段数据中所有的值都是唯一的，MySQL 将不再对第二个字段进行排序。<br>例：<br>单字段：SELECT * FROM tb_students_info ORDER BY height;<br>多字段： SELECT name,height FROM tb_students_info ORDER BY height,name;</p>
+<h3 id="WHERE：条件查询数据"><a href="#WHERE：条件查询数据" class="headerlink" title="WHERE：条件查询数据"></a>WHERE：条件查询数据</h3><p>语法格式：where 查询条件<br>查询条件可以是：<br> 1.带比较运算符和逻辑运算符的查询条件<br> 2.带 BETWEEN AND 关键字的查询条件<br> 3.带 IS NULL 关键字的查询条件<br> 4.带 IN 关键字的查询条件<br> 5.带 LIKE 关键字的查询条件<br>例子：<br>单查询条件：<br>mysql&gt; SELECT name,age FROM tb_students_info<br>    -&gt; WHERE age<22;
+多查询条件：
+mysql> SELECT name,age FROM tb_students_info<br>    -&gt; WHERE age&gt;22 and height&gt;=170;(和：表示两个都满足)<br>mysql&gt; SELECT name,age,height FROM tb_students_info<br>    -&gt; WHERE age&gt;21 OR height&gt;=175;（或：只用满足一个）<br>mysql&gt; SELECT name,age,height FROM tb_students_info<br>    -&gt; WHERE age&gt;21 XOR height&gt;=175;（异或：只有一个为真的时候才会返回数据）</p>
+<h3 id="LIKE模糊查询："><a href="#LIKE模糊查询：" class="headerlink" title="LIKE模糊查询："></a>LIKE模糊查询：</h3><p>LIKE 关键字主要用于搜索匹配字段中的指定内容。<br>语法格式：   [NOT] LIKE  ‘字符串’<br>LIKE 关键字支持百分号“%”和下划线“<em>”通配符。<br>—“%”是 MySQL 中最常用的‘通配符’，它能代表任何长度的字符串，字符串的长度可以为 0。例如，a%b表示以字母 a 开头，以字母 b 结尾的任意长度的字符串。该字符串可以代表 ab、acb、accb、accrb 等字符串。<br>ps：匹配字符必须添加单引号和双引号<br>例：查找所有不以字母“T”开头的学生姓名<br>    mysql&gt; SELECT name FROM tb_students_info<br>    -&gt; WHERE name LIKE ‘T%’;<br>ps:  ‘T%’ :结尾为T的学生姓名;<br>ps:  ‘%e%:名字里有e;<br>—“</em>“只能代表单个字符，字符的长度不能为 0；<br>    例：查找所有以字母“y”结尾，且“y”前面只有 4 个字母的学生姓名<br>    mysql&gt; SELECT name FROM tb_students_info<br>    -&gt; WHERE name LIKE ‘____y’;</p>
+<h2 id="下面是使用通配符的一些注意事项："><a href="#下面是使用通配符的一些注意事项：" class="headerlink" title="下面是使用通配符的一些注意事项："></a>下面是使用通配符的一些注意事项：</h2><p>   1.注意大小写。MySQL 默认是不区分大小写的。如果区分大小写，像“Tom”这样的数据就不能被“t%”所匹配到。<br>   2.注意尾部空格，尾部空格会干扰通配符的匹配。例如，“T % ”就不能匹配到“Tom”。<br>   3.注意 NULL。“%”通配符可以到匹配任意字符，但是不能匹配 NULL。也就是说 “%”匹配不到 tb_students_info 数据表中值为 NULL 的记录。</p>
+<h2 id="下面是一些使用通配符要记住的技巧。"><a href="#下面是一些使用通配符要记住的技巧。" class="headerlink" title="下面是一些使用通配符要记住的技巧。"></a>下面是一些使用通配符要记住的技巧。</h2><p>  1.不要过度使用通配符，如果其它操作符能达到相同的目的，应该使用其它操作符。因为 MySQL 对通配符的处理一般会比其他操作符花费更长的时间。<br>  2.在确定使用通配符后，除非绝对有必要，否则不要把它们用在字符串的开始处。把通配符置于搜索模式的开始处，搜索起来是最慢的。<br>  3.仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</p>
+<p>ps:如果查询内容中包含通配符，可以使用“\”转义符。例如，在 tb_students_info 表中，将学生姓名“Dany”修改为“Dany%”后，查询以“%”结尾的学生姓名，SQL 语句和运行结果如下：<br>mysql&gt; SELECT NAME FROM test.<code>tb_students_info</code> WHERE NAME LIKE ‘%\%’;</p>
+<h3 id="范围查询-BETWEEN-AND-："><a href="#范围查询-BETWEEN-AND-：" class="headerlink" title="范围查询 BETWEEN AND ："></a>范围查询 BETWEEN AND ：</h3><p>BETWEEN AND 需要两个参数，即范围的起始值和终止值。如果字段值在指定的范围内，则这些记录被返回。如果不在指定范围内，则不会被返回。<br>语法格式： [NOT] BETWEEN 取值1 AND 取值2<br>ps:<br>NOT：可选参数，表示指定范围之外的值。如果字段值不满足指定范围内的值，则这些记录被返回。<br>取值1：表示范围的起始值。<br>取值2：表示范围的终止值<br>ps:可以查询时间范围内，时间书写格式‘2021-3-10’</p>
+<h3 id="空值查询："><a href="#空值查询：" class="headerlink" title="空值查询："></a>空值查询：</h3><p>空值不同于 0，也不同于空字符串；<br>语法格式：IS [NOT] NULL；<br>IS NULL 是一个整体，不能将 IS 换成“=”；</p>
+<h3 id="使用GROUP-BY分组查询"><a href="#使用GROUP-BY分组查询" class="headerlink" title="使用GROUP BY分组查询"></a>使用GROUP BY分组查询</h3><p>GROUP BY 关键字,可以根据一个或多个字段对查询结果(select * from users where id=1 groud by name )进行分组。<br>语法格式：GROUP BY  &lt;字段名&gt;</p>
+<p>单独使用 GROUP BY 关键字时，查询结果会只显示每个分组的’第一条记录‘。</p>
+<p>ps:  GROUP BY 关键字可以和 GROUP_CONCAT() 函数一起使用。GROUP_CONCAT() 函数会把每个分组的字段值都显示出来。</p>
+<p>与聚合函数使用：<br>ps：聚合函数包括 COUNT()，SUM()，AVG()，MAX() 和 MIN()。其中，COUNT() 用来统计记录的条数；SUM() 用来计算字段值的总和；AVG() 用来计算字段值的平均值；MAX() 用来查询字段的最大值；MIN() 用来查询字段的最小值。<br>ps：函数大全— <a href="http://c.biancheng.net/mysql/function/" target="_blank" rel="noopener">http://c.biancheng.net/mysql/function/</a></p>
+<p>与 WITH ROLLUP使用：<br>WITH POLLUP 关键字用来在所有记录的最后加上一条记录，这条记录是上面所有记录的总和，即统计记录数量。</p>
+<h3 id="HAVING过滤分组："><a href="#HAVING过滤分组：" class="headerlink" title="HAVING过滤分组："></a>HAVING过滤分组：</h3><p>可以使用 HAVING 关键字对分组后的数据进行过滤。<br>语法格式：HAVING &lt;查询条件&gt;<br>ps:  HAVING 关键字和 WHERE 关键字都可以用来过滤数据，且 HAVING 支持 WHERE 关键字中所有的操作符和语法。<br>两者差别：<br>一般情况下，WHERE 用于过滤数据行，而 HAVING 用于过滤分组。<br>WHERE 查询条件中不可以使用聚合函数，而 HAVING 查询条件中可以使用聚合函数。<br>WHERE 在数据分组前进行过滤，而 HAVING 在数据分组后进行过滤 。<br>WHERE 针对数据库文件进行过滤，而 HAVING 针对查询结果进行过滤。也就是说，WHERE 根据数据表中的字段直接进行过滤，而 HAVING 是根据前面已经查询出的字段进行过滤。<br>WHERE 查询条件中不可以使用字段别名，而 HAVING 查询条件中可以使用字段别名。</p>
+<h3 id="cross-join-交叉连接："><a href="#cross-join-交叉连接：" class="headerlink" title="cross join:交叉连接："></a>cross join:交叉连接：</h3><p>CROSS JOIN 查询出两张表中的’笛卡尔积‘<br>语法格式：SELECT &lt;字段名&gt; FROM &lt;表1&gt;, &lt;表2&gt; [WHERE子句]<br>不推荐使用where字句，因为MySQL 会先生成两个表的笛卡尔积，然后再选择满足 WHERE 条件的记录。</p>
+<h3 id="INNER-JOIN：内连接"><a href="#INNER-JOIN：内连接" class="headerlink" title="INNER JOIN：内连接"></a>INNER JOIN：内连接</h3><p>内连接使用 INNER JOIN 关键字连接两张表，并使用 ON 子句来设置连接条件。如果没有连接条件，INNER JOIN 和 CROSS JOIN 在语法上是等同的，两者可以互换。<br>语法格式：SELECT &lt;字段名&gt; FROM &lt;表1&gt; INNER JOIN &lt;表2&gt; [ON子句]<br>ps：SELECT 语句后面的写法是表名.列名<br>ps：INNER JOIN 也可以使用 WHERE 子句指定连接条件，但是 INNER JOIN … ON 语法是官方的标准写法，而且 WHERE 子句在某些时候会影响查询的性能。</p>
+<h3 id="外连接LEFT-RIGHT-JOIN"><a href="#外连接LEFT-RIGHT-JOIN" class="headerlink" title="外连接LEFT/RIGHT JOIN"></a>外连接LEFT/RIGHT JOIN</h3><p>外连接会先将连接的表分为基表和参考表，再以基表为依据返回满足和不满足条件的记录。<br>-左连接：<br>—语法格式：SELECT &lt;字段名&gt; FROM &lt;表1&gt; LEFT OUTER JOIN &lt;表2&gt; <ON子句><br>—语法说明如下：<br>字段名：需要查询的字段名称。<br>&lt;表1&gt;&lt;表2&gt;：需要左连接的表名。<br>LEFT OUTER JOIN：左连接中可以省略 OUTER 关键字，只使用关键字 LEFT JOIN。<br>ON 子句：用来设置左连接的连接条件，不能省略。<br>ps：“表1”为基表，“表2”为参考表。左连接查询时，可以查询出“表1”中的所有记录和“表2”中匹配连接条件的记录。<br>         如果“表1”的某行在“表2”中没有匹配行，那么在返回结果中，“表2”的字段值均为空值（NULL）。</p>
+<p>-右连接与左连接就是基表不同，右连接选择表2为基表；</p>
+<p>sqli-labs散记:</p>
+<p>where 1=1 是为了避免where 关键字后面的第一个词直接就是 “and”而导致语法错误。<br>位运算：<a href="https://www.runoob.com/w3cnote/bit-operation.html" target="_blank" rel="noopener">https://www.runoob.com/w3cnote/bit-operation.html</a><br>column：列</p>
+<p>2020信安培训：<br>sqli-labs：<br>ps:”?：传参”<br>1.是否存在注入：and 1=2 / or 1=1<br>2.判断字段数：order by 1 # (字段数是3)<br>3.判断回显字段：union select  1,2,3,  #（联合查询）<br>4.注入出数据库的名称：information_schema<br>ps:特殊的表：schemata（数据库名字），tables（数据库的表名），columns（表中的字段）<br>information_schema.schemata<br>5.选择数据库进行表名注入：<a href="https://www.cnblogs.com/3ichae1/p/11229029.html" target="_blank" rel="noopener">https://www.cnblogs.com/3ichae1/p/11229029.html</a><br>6.选择表进行字段名的注入:information _schema.columns<br>?id=-3’ union select 1,group_concat(solumn_name),3 from information_schema.columns where table_name=’users’<br>7.选择表的字段进行数据的注入：<br>?id=3’ union select 1,group_concat(username),3 from users %23<br>?id=3’ union select 1,group_concat(password),3 from users %23</p>
+<p>11.27培训要求：<br>1.DVWA安装：<a href="https://blog.csdn.net/u013541325/article/details/109323067?biz_id=102&amp;utm_term=dvwa%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-109323067&amp;spm=1018.2118.3001.4449" target="_blank" rel="noopener">https://blog.csdn.net/u013541325/article/details/109323067?biz_id=102&amp;utm_term=dvwa%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-0-109323067&amp;spm=1018.2118.3001.4449</a><br>ps:DVWA使用教程：<a href="https://blog.csdn.net/ai_64/article/details/91353960" target="_blank" rel="noopener">https://blog.csdn.net/ai_64/article/details/91353960</a><br>ps:运行php环套件后（apache2.4.39+FTP0.9.60+MySql）:浏览器输入<a href="http://127.0.0.1/DVWA-master/security.php进入DVWA" target="_blank" rel="noopener">http://127.0.0.1/DVWA-master/security.php进入DVWA</a><br>2.火狐插件：PoxyProxy-高级代理服务器管理工具具有灵活，稳健等特点<br>3.burpsuite：web渗透常用工具（顶级常用工具，在gitbook上面有《burp suite实战指南》），可进行抓包<br>4.安装burpsuite需要解决java的环境和配置问题：安装时出现了点击next无反应，目前解决方案为换burpsuite版本<br>教程网址：<a href="https://blog.csdn.net/qq_40684306/article/details/88619565" target="_blank" rel="noopener">https://blog.csdn.net/qq_40684306/article/details/88619565</a><br>教程网址:<a href="https://blog.csdn.net/u014549283/article/details/81248886?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242" target="_blank" rel="noopener">https://blog.csdn.net/u014549283/article/details/81248886?utm_medium=distribute.pc_relevant.none-task-blog-title-2&amp;spm=1001.2101.3001.4242</a><br>5，burpsuite抓包教程：<a href="https://www.cnblogs.com/mihoutao/p/11690432.html" target="_blank" rel="noopener">https://www.cnblogs.com/mihoutao/p/11690432.html</a><br>6.Proxifer:全局代理（我的电脑会很慢，全局的意思是给你的ip加上一层掩饰。你可以不仅仅在浏览器浏览外网，还可以在应用比如steam）</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/10/16/ctfshow-vip记录/" data-toggle="tooltip" data-placement="top" title="CTFshow">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/10/16/sql的一些笔记/" data-toggle="tooltip" data-placement="top" title="sql的一些笔记">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        本博客所有文章除特别声明外，均采用 CC BY-SA 4.0 协议 ，转载请注明出处！
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+<!-- netease; qqkg -->
+<!--
+<script src="/js/music-player/player.js?library=config.music.library.js"></script>
+-->
+<script src="../../../../js/music-player/player.js?library=netease&music=https://kg.qq.com/node/play?s=7deFpz7Z26Jmv7di&g_f=share_html"></script>
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#mysql基础语言"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">mysql基础语言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#前言："><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">前言：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#规则："><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">规则：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#基本语句："><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">基本语句：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-查看数据库："><span class="toc-nav-number">1.3.1.</span> <span class="toc-nav-text">1.查看数据库：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-创建数据库并查看："><span class="toc-nav-number">1.3.2.</span> <span class="toc-nav-text">2.创建数据库并查看：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-修改字符集以及规则："><span class="toc-nav-number">1.3.3.</span> <span class="toc-nav-text">3.修改字符集以及规则：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-删除数据库："><span class="toc-nav-number">1.3.4.</span> <span class="toc-nav-text">4.删除数据库：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-USE-语句用来完成一个数据库到另一个数据库的跳转"><span class="toc-nav-number">1.3.5.</span> <span class="toc-nav-text">5.USE 语句用来完成一个数据库到另一个数据库的跳转</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-活用注释："><span class="toc-nav-number">1.3.6.</span> <span class="toc-nav-text">6.活用注释：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#从结果中删除重复行"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">从结果中删除重复行</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-大小写问题大厂规定："><span class="toc-nav-number">2.0.1.</span> <span class="toc-nav-text">7.大小写问题大厂规定：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#数据’表’基本操作篇："><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">数据’表’基本操作篇：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#创建表："><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">创建表：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#修改表："><span class="toc-nav-number">2.1.2.</span> <span class="toc-nav-text">修改表：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#修改表名："><span class="toc-nav-number">2.1.3.</span> <span class="toc-nav-text">修改表名：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DESCRIBE查勘表结构："><span class="toc-nav-number">2.1.4.</span> <span class="toc-nav-text">DESCRIBE查勘表结构：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MySQL数据表添加字段（三种方式）"><span class="toc-nav-number">2.1.5.</span> <span class="toc-nav-text">MySQL数据表添加字段（三种方式）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#数据表操作语句："><span class="toc-nav-number">2.1.6.</span> <span class="toc-nav-text">数据表操作语句：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SELECT-FROM-表名："><span class="toc-nav-number">2.1.7.</span> <span class="toc-nav-text">SELECT * FROM 表名：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#查询特定字段："><span class="toc-nav-number">2.1.8.</span> <span class="toc-nav-text">查询特定字段：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#去重："><span class="toc-nav-number">2.1.9.</span> <span class="toc-nav-text">去重：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设置别名："><span class="toc-nav-number">2.1.10.</span> <span class="toc-nav-text">设置别名：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#限制查询结果："><span class="toc-nav-number">2.1.11.</span> <span class="toc-nav-text">限制查询结果：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#对查询结果排序："><span class="toc-nav-number">2.1.12.</span> <span class="toc-nav-text">对查询结果排序：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WHERE：条件查询数据"><span class="toc-nav-number">2.1.13.</span> <span class="toc-nav-text">WHERE：条件查询数据</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LIKE模糊查询："><span class="toc-nav-number">2.1.14.</span> <span class="toc-nav-text">LIKE模糊查询：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下面是使用通配符的一些注意事项："><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">下面是使用通配符的一些注意事项：</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下面是一些使用通配符要记住的技巧。"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">下面是一些使用通配符要记住的技巧。</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#范围查询-BETWEEN-AND-："><span class="toc-nav-number">2.3.1.</span> <span class="toc-nav-text">范围查询 BETWEEN AND ：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#空值查询："><span class="toc-nav-number">2.3.2.</span> <span class="toc-nav-text">空值查询：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用GROUP-BY分组查询"><span class="toc-nav-number">2.3.3.</span> <span class="toc-nav-text">使用GROUP BY分组查询</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#HAVING过滤分组："><span class="toc-nav-number">2.3.4.</span> <span class="toc-nav-text">HAVING过滤分组：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#cross-join-交叉连接："><span class="toc-nav-number">2.3.5.</span> <span class="toc-nav-text">cross join:交叉连接：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#INNER-JOIN：内连接"><span class="toc-nav-number">2.3.6.</span> <span class="toc-nav-text">INNER JOIN：内连接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#外连接LEFT-RIGHT-JOIN"><span class="toc-nav-number">2.3.7.</span> <span class="toc-nav-text">外连接LEFT&#x2F;RIGHT JOIN</span></a></li></ol></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#sql" title="sql">sql</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://na0h.cn/" target="_blank">间隔</a></li>
+                    
+                        <li><a href="https://hututu-w.github.io/" target="_blank">冰洁</a></li>
+                    
+                        <li><a href="https://gutoom.github.io/" target="_blank">Master_Zhang</a></li>
+                    
+                        <li><a href="https://saltyfishyjk.github.io/" target="_blank">saltyfishyjk</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/wxx0105">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; wx_x 2022 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://github.com/wxx0105/wxx0105.github.io/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it wxx&quot;,&quot;🍀&quot;,&quot;🍂&quot;,&quot;🌈&quot;,&quot;🧿&quot;,&quot;🍁&quot;,&quot;🍇&quot;,&quot;🍍&quot;,&quot;🕌&quot;,&quot;⛩️&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
