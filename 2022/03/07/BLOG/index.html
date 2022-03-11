@@ -120,8 +120,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">775</span> and
-                                Reading Time <span class="post-count">3</span> Minutes
+                                Words <span class="post-count">995</span> and
+                                Reading Time <span class="post-count">4</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -189,6 +189,13 @@
 
                         
                         <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/photography/">Photography</a>
                         </li>
                         
@@ -197,13 +204,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -291,17 +291,32 @@
 <p><img src="https://s2.loli.net/2022/03/07/AFbmIOBtaMqZQhw.png" alt="image-20220307161630098"></p>
 <p>要其他目录的发言还有背景的话，进去文件夹改md就好</p>
 <p>如果不需要这个目录了，直接删除他文件夹就好</p>
+<h3 id="阅读目录"><a href="#阅读目录" class="headerlink" title="阅读目录"></a>阅读目录</h3><p>在每篇文章头部加上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">catalog: true</span><br></pre></td></tr></table></figure>
+<p>这个有一个致命的短板，就是这个snail主题，加密后，不仅外面看这个文章是乱码，而且进去之后，没有阅读目录。。这都是啥跟啥啊</p>
+<p>其次就是你的md里面，不能越级设置目录，比如上个是h1，你下个就必须h2，不然侧边阅读目录会挤在一起，搞学了属于。</p>
 <h3 id="git报错"><a href="#git报错" class="headerlink" title="git报错"></a>git报错</h3><p>hexo 报错Cannot read property ‘url’ of null</p>
 <p>这个的原因是comfig里面的<code>deployment</code>没有写github仓库地址</p>
 <p>解决：直接复制了之前的next的配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: http:&#x2F;&#x2F;github.com&#x2F;wxx0105&#x2F;wxx0105.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>CNAME：写自己的域名即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">格式：</span><br><span class="line">wxx0105.cn</span><br></pre></td></tr></table></figure>
+<p>已经在本机备份以及百度云备份</p>
+<h3 id="网站图标"><a href="#网站图标" class="headerlink" title="网站图标"></a>网站图标</h3><p>直接把你想要的图片放进这个位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\wxx\blog1\source\img</span><br></pre></td></tr></table></figure>
+<p>然后记住这个名字<code>ironman-draw.png</code></p>
+<p>然后删掉这张图片，拖进你想要的图标，然后将这个图标设置为这个名字<code>ironman-draw.png</code></p>
+<p>超级神奇有没有。。。搞学了</p>
+<p>现在成功上传了 2022.3.9 23:52:16</p>
 
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2022/03/10/掌控者/" data-toggle="tooltip" data-placement="top" title="掌控者">&larr; Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">
@@ -418,7 +433,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#BLOG踩坑指南"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BLOG踩坑指南</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#next7-8-0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">next7.8.0</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#背景"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">背景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文档设置"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">文档设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#高级设置"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">高级设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加评论功能"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">添加评论功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文章置顶"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">文章置顶</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于报错Failed-to-connect-to-github-com-port-443-connection-timed-out"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">关于报错Failed to connect to github.com port 443:connection timed out</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#侧边栏美化"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">侧边栏美化</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Snail"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Snail</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#目录"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">目录</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git报错"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">git报错</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#BLOG踩坑指南"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">BLOG踩坑指南</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#next7-8-0"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">next7.8.0</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#背景"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">背景</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文档设置"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">文档设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#高级设置"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">高级设置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#添加评论功能"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">添加评论功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文章置顶"><span class="toc-nav-number">1.1.5.</span> <span class="toc-nav-text">文章置顶</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于报错Failed-to-connect-to-github-com-port-443-connection-timed-out"><span class="toc-nav-number">1.1.6.</span> <span class="toc-nav-text">关于报错Failed to connect to github.com port 443:connection timed out</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#侧边栏美化"><span class="toc-nav-number">1.1.7.</span> <span class="toc-nav-text">侧边栏美化</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Snail"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">Snail</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#目录"><span class="toc-nav-number">1.2.1.</span> <span class="toc-nav-text">目录</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#阅读目录"><span class="toc-nav-number">1.2.2.</span> <span class="toc-nav-text">阅读目录</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#git报错"><span class="toc-nav-number">1.2.3.</span> <span class="toc-nav-text">git报错</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#网站图标"><span class="toc-nav-number">1.2.4.</span> <span class="toc-nav-text">网站图标</span></a></li></ol></li></ol></li></ol>
             
           
           </div>
@@ -460,6 +475,8 @@
                         <li><a href="https://gutoom.github.io/" target="_blank">Master_Zhang</a></li>
                     
                         <li><a href="https://saltyfishyjk.github.io/" target="_blank">saltyfishyjk</a></li>
+                    
+                        <li><a href="http://lyxx.link/" target="_blank">林会安全</a></li>
                     
                 </ul>
                 
@@ -668,7 +685,7 @@
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it wxx&quot;,&quot;🍀&quot;,&quot;🍂&quot;,&quot;🌈&quot;,&quot;🧿&quot;,&quot;🍁&quot;,&quot;🍇&quot;,&quot;🍍&quot;,&quot;🕌&quot;,&quot;⛩️&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it wxx&#34;,&#34;🍀&#34;,&#34;🍂&#34;,&#34;🌈&#34;,&#34;🧿&#34;,&#34;🍁&#34;,&#34;🍇&#34;,&#34;🍍&#34;,&#34;🕌&#34;,&#34;⛩️&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
         
 
         <!-- background effects end -->
@@ -678,21 +695,6 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
