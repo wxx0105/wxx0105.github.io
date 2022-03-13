@@ -118,8 +118,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.4k</span> and
-                                Reading Time <span class="post-count">5</span> Minutes
+                                Words <span class="post-count">1.8k</span> and
+                                Reading Time <span class="post-count">7</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -187,14 +187,14 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
@@ -294,6 +294,32 @@
 <p>xss创建项目的时候，选择拿cookie的模块就好，或者直接选加强那个</p>
 <h3 id="进击！拿到-Web-最高权限！"><a href="#进击！拿到-Web-最高权限！" class="headerlink" title="进击！拿到 Web 最高权限！"></a>进击！拿到 Web 最高权限！</h3><p>拿刚刚得到的<code>cookie</code>去改传送门的<code>cookie</code>头，然后去掉url的<code>login.asp</code></p>
 <p>即可登录进去，看提示，找地方上传getshell</p>
+<p>很多地方都可以上传，但是上传了，却找不到路径，只能找可以显示路径的地方</p>
+<p>没错，就是这里</p>
+<p><img src="https://s2.loli.net/2022/03/12/yeV3MUjRiclBoHC.png" alt="image-20220312131135668">、<img src="https://s2.loli.net/2022/03/12/jlNFV4G6b1OohiX.png" alt="image-20220312131311198"></p>
+<p>上传有限制，仅仅</p>
+<p><img src="https://s2.loli.net/2022/03/12/8p9hDOsibSXQTAv.png" alt="image-20220312131334913"></p>
+<p>很好，那就写图片马绕过：</p>
+<p>asp马参考：<a href="https://www.cnblogs.com/xiaozi/p/7560907.html" target="_blank" rel="noopener">一句话木马：ASP 篇 - Bypass - 博客园 (cnblogs.com)</a></p>
+<ul>
+<li>copy语法：<code>copy 1.asp/b+1.jpg 123.jpg</code>，这样就可以写入（必须cmd，不可以powershell）黄哥说，一般马在后比较好，我现在去尝试一下马写在后面，emm尝试了一下，但是马在后面，直接上传不上去，倒也不是被拦截，而是直接找不到</li>
+<li>010editor：如果copy写入不成功，在图片末尾直接粘贴你的一句话在文本区域的最后一段试试</li>
+<li>查出来的使用ps，在文件的文件信息里面，所有的插入你的一句话</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/03/12/QPJl8EduZ2LXRYT.png" alt="image-20220312160746594"></p>
+<p>成功了两次：</p>
+<ol>
+<li>拿着之前copy的去get，不行，然后拿着010editor在最后加了一句话，突然就可以了</li>
+<li>这次是直接 <code>copy 1.asp/b+1.jpg 123.jpg</code>，然后改为cer（证书格式）上传，就可以get到了，很神奇</li>
+</ol>
+<p><img src="https://s2.loli.net/2022/03/12/aFSsynAPrXhzice.png" alt="image-20220312131108342"></p>
+<p>需要注意的细节就是，你的一句话是 eval，那你godzila就选<img src="https://s2.loli.net/2022/03/12/BJWqTMItAQ1n8mb.png" alt="image-20220312161021995"></p>
+<p>目前只知道这个，去了解一下。。</p>
+<h3 id="SYSTEM！POWER！"><a href="#SYSTEM！POWER！" class="headerlink" title="SYSTEM！POWER！"></a>SYSTEM！POWER！</h3><p><a href="https://hack.zkaq.cn/battle/target?id=3eb7bec4a7e95297" target="_blank" rel="noopener">封神台 - 掌控安全在线演练靶场，是一个在线黑客攻防演练平台。 (zkaq.cn)</a></p>
+<p><img src="https://s2.loli.net/2022/03/13/M3eCDIRVQqtwxid.png" alt="image-20220313142919979"></p>
+<p><img src="https://s2.loli.net/2022/03/13/Z2pR5sYV3q6NL89.png" alt="image-20220313144150242"></p>
+<p>上述作为补充，大马也就是黑黑的很帅的UI</p>
+<p>以前对于shell管理工具只做了很少准备，这次连shell就遇到了很多问题，多半都是工具准备不足，不论是使用方法，还是每个shell tool的细节</p>
 <h2 id="尤里的复仇II-回归"><a href="#尤里的复仇II-回归" class="headerlink" title="尤里的复仇II 回归"></a>尤里的复仇II 回归</h2><h3 id="脚踏实地"><a href="#脚踏实地" class="headerlink" title="脚踏实地"></a>脚踏实地</h3><p><a href="http://awd19-b22.aqlab.cn/" target="_blank" rel="noopener">Home (aqlab.cn)</a></p>
 <p>信息收集也了解了挺久了，以为已经足够了，但是当今天我健哥跟我说，实战是最好的学习的时候，我震惊了，因为，我发现，如果真的叫我去对一个目标进行信息收集，我发现我脑袋一片空白，属于是眼高于手了，所以我现在就来找个很类似真实情况的靶场打一下。</p>
 <p>我是真的没有头绪，只想着nmap扫一下，然后nmap的时候，那个url一直搞错，属于是学不精了。</p>
