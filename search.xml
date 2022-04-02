@@ -4,11 +4,49 @@
   
     
     <entry>
+      <title>windows7下配置mingw64</title>
+      <link href="/2022/04/02/windows7%E4%B8%8B%E9%85%8D%E7%BD%AEvscode%E7%9A%84c-%E5%BC%80%E5%8F%91/"/>
+      <url>/2022/04/02/windows7%E4%B8%8B%E9%85%8D%E7%BD%AEvscode%E7%9A%84c-%E5%BC%80%E5%8F%91/</url>
+      
+        <content type="html"><![CDATA[  <a id="more"></a><h1 id="windows7下配置mingw64"><a href="#windows7下配置mingw64" class="headerlink" title="windows7下配置mingw64"></a>windows7下配置mingw64</h1><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>mingw64下载地址：<a href="https://www.cnblogs.com/TAMING/p/9945389.html" target="_blank" rel="noopener">https://www.cnblogs.com/TAMING/p/9945389.html</a></p><p>vscode下载地址：直接搜索</p><h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><p>配置mingw64</p><p>下载解压后，看到这样就算是下载正确了</p><p><img src="https://s2.loli.net/2022/04/02/WmswZjR9U65phBD.png" alt="image-20220402181705808"></p><p>接下来就是配置环境变量，win7稍微有点不同于win10</p><p>首先右键计算机图标，点击属性，接着<img src="https://s2.loli.net/2022/04/02/QzAhTnKjxLqdgVc.png" alt="image-20220402181812358"></p><p>win7与win10不同之处在于win7除了需要再PATH加上mingw64的bin路径，还需要在系统变量这里创建一个mingw64的变量（最好同名）</p><p><img src="https://s2.loli.net/2022/04/02/bBPtELNHpTeUlIw.png" alt="image-20220402181929105"></p><p>记得一定要确定到底，不要点关闭！不然不保存</p><h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>cmd</p><p><img src="https://s2.loli.net/2022/04/02/aAytLqXnQewWbOP.png" alt="image-20220402182031424"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> windows7配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>安装蜜罐hfish</title>
+      <link href="/2022/04/01/%E5%AE%89%E8%A3%85%E8%9C%9C%E7%BD%90hfish/"/>
+      <url>/2022/04/01/%E5%AE%89%E8%A3%85%E8%9C%9C%E7%BD%90hfish/</url>
+      
+        <content type="html"><![CDATA[  <a id="more"></a><h1 id="安装蜜罐hfish"><a href="#安装蜜罐hfish" class="headerlink" title="安装蜜罐hfish"></a>安装蜜罐hfish</h1><p>这个也是和黄哥突然聊天的时候想起来的，安装也是废了一番功夫，主要是没有计划去实现我的想法，总是想到什么就做什么，才导致频繁报错，直到迫不得已重置</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>之前是centos7，一直错，在启动docker 容器的时候，我裂开，于是将vps更新成8.2试试看</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>docker安装：<a href="https://blog.csdn.net/m0_38044453/article/details/120888050" target="_blank" rel="noopener">https://blog.csdn.net/m0_38044453/article/details/120888050</a></p><h2 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> tools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我的疑惑</title>
       <link href="/2022/03/29/%E6%88%91%E7%9A%84%E7%96%91%E6%83%91/"/>
       <url>/2022/03/29/%E6%88%91%E7%9A%84%E7%96%91%E6%83%91/</url>
       
-        <content type="html"><![CDATA[<a id="more"></a><h1 id="我的疑惑"><a href="#我的疑惑" class="headerlink" title="我的疑惑"></a>我的疑惑</h1><h2 id="web疑惑"><a href="#web疑惑" class="headerlink" title="web疑惑"></a>web疑惑</h2>]]></content>
+        <content type="html"><![CDATA[<a id="more"></a><h1 id="我的疑惑"><a href="#我的疑惑" class="headerlink" title="我的疑惑"></a>我的疑惑</h1><h2 id="web疑惑"><a href="#web疑惑" class="headerlink" title="web疑惑"></a>web疑惑</h2><h3 id="网站的组成"><a href="#网站的组成" class="headerlink" title="网站的组成"></a>网站的组成</h3><p>参考：<a href="https://www.cnblogs.com/paidx0/p/13977728.html" target="_blank" rel="noopener">https://www.cnblogs.com/paidx0/p/13977728.html</a></p><ul><li><p>cms（内容管理系统）：更简单快捷管理自己的网站，因为这个系统介于前端与后端，所以cms爆出漏洞我们也可上传一句话利用</p></li><li><p>中间件：提供系统软件和更高一级的应用程序之前连接交互的软件，所以充当的角色是将系统软件环境与应用程序软件环境的隔离；容器是中间件的一种，也是起到隔离作用，是给到应用程序的组件提供一个单独的环境</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">web中间件：apache tomcat、BEA WebLogic、IBM WebSphere等。</span><br><span class="line">web容器：JSP容器、SERVLET容器、ASP容器等。</span><br></pre></td></tr></table></figure></li></ul>]]></content>
       
       
       
