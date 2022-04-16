@@ -120,7 +120,7 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.6k</span> and
+                                Words <span class="post-count">1.5k</span> and
                                 Reading Time <span class="post-count">6</span> Minutes
                             </span>
                             <div class="blank_box"></div>
@@ -258,46 +258,64 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <a id="more"></a>https://www.ddosi.org/
-
-# Xray使用
-
-xray是什么？是一款扫描器，可以打poc，可以爬网站，很高效
-
-参考文档：（官方）https://docs.xray.cool/#/
-
-## xray使用基础使用
-
-[下载](https://github.com/chaitin/xray/releases/tag/1.8.4)，**[pro下载](https://www.ddosi.org/xray-pro-cracked/)**
-
-首先下载下来的是集成的exe文件，使用也是简单的cmd调用exe。
-
-这么简单我也不会hah，所以我特意写了这篇，其实主要还是这个`-h`帮助我看不懂，只有看使用文档，但是每次找都要好久。
-
-### 功能
-
-其实不是很理解这个所谓的功能和下面那个打poc
-
-| 命令        | 说明                                                        |
-| ----------- | ----------------------------------------------------------- |
-| webscan     | xray核心功能，用来发现探测Web漏洞                           |
-| servicescan | 服务扫描功能 用来探测服务漏洞                               |
-| poclint     | 检测poc是否符合规范                                         |
-| reverse     | 启动单独的盲打平台服务                                      |
-| genca       | 用于快速生成一个根证书，主要用于被动代理扫描HTTPS流量时用到 |
-| upgrade     | 检查新版本并自动升级                                        |
-| version     | 版本信息                                                    |
-| help        | 显示命令列表或一个命令的帮助                                |
-| subdomain   | 子域名扫描 高级版本才有的命令                               |
-
-### 爬虫
-
-浏览器进行代理爬
-
-首先需要配置浏览器代理（高效，当然联动burp也需要这样设置代理）
-
-设置ca证书（我用chrome，switchomega添加一个代理就可）：
-
+                <a id="more"></a>
+<h1 id="Xray使用"><a href="#Xray使用" class="headerlink" title="Xray使用"></a>Xray使用</h1><p>xray是什么？是一款扫描器，可以打poc，可以爬网站，很高效</p>
+<p>参考文档：（官方）<a href="https://docs.xray.cool/#/" target="_blank" rel="noopener">https://docs.xray.cool/#/</a></p>
+<h2 id="xray使用基础使用"><a href="#xray使用基础使用" class="headerlink" title="xray使用基础使用"></a>xray使用基础使用</h2><p><a href="https://github.com/chaitin/xray/releases/tag/1.8.4">下载</a>，<strong><a href="https://www.ddosi.org/xray-pro-cracked/" target="_blank" rel="noopener">pro下载</a></strong></p>
+<p>首先下载下来的是集成的exe文件，使用也是简单的cmd调用exe。</p>
+<p>这么简单我也不会hah，所以我特意写了这篇，其实主要还是这个<code>-h</code>帮助我看不懂，只有看使用文档，但是每次找都要好久。</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>其实不是很理解这个所谓的功能和下面那个打poc</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>webscan</td>
+<td>xray核心功能，用来发现探测Web漏洞</td>
+</tr>
+<tr>
+<td>servicescan</td>
+<td>服务扫描功能 用来探测服务漏洞</td>
+</tr>
+<tr>
+<td>poclint</td>
+<td>检测poc是否符合规范</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>启动单独的盲打平台服务</td>
+</tr>
+<tr>
+<td>genca</td>
+<td>用于快速生成一个根证书，主要用于被动代理扫描HTTPS流量时用到</td>
+</tr>
+<tr>
+<td>upgrade</td>
+<td>检查新版本并自动升级</td>
+</tr>
+<tr>
+<td>version</td>
+<td>版本信息</td>
+</tr>
+<tr>
+<td>help</td>
+<td>显示命令列表或一个命令的帮助</td>
+</tr>
+<tr>
+<td>subdomain</td>
+<td>子域名扫描 高级版本才有的命令</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="爬虫"><a href="#爬虫" class="headerlink" title="爬虫"></a>爬虫</h3><p>浏览器进行代理爬</p>
+<p>首先需要配置浏览器代理（高效，当然联动burp也需要这样设置代理）</p>
+<p>设置ca证书（我用chrome，switchomega添加一个代理就可）：</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\xray_windows_amd64.exe genca</span><br></pre></td></tr></table></figure>
 <p>生成的两个文件，打开证书文件，像burp一样添加证书即可，添加了这个proxy就可以xray开启监听，你直接访问网址就可以浏览器访问网站，xray就自动爬取网站了</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\xray_windows_amd64.exe webscan --listen <span class="number">127</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">1</span>:<span class="number">7777</span> --html-output xray-testphp.html</span><br></pre></td></tr></table></figure>
@@ -449,7 +467,7 @@ xray是什么？是一款扫描器，可以打poc，可以爬网站，很高效
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#服务扫描（漏扫）"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">服务扫描（漏扫）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用案例"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">使用案例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xray联动goby设置"><span class="toc-nav-number"></span> <span class="toc-nav-text">xray联动goby设置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xray联动burp（没用过）"><span class="toc-nav-number"></span> <span class="toc-nav-text">xray联动burp（没用过）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#参考"><span class="toc-nav-number"></span> <span class="toc-nav-text">参考</span></a>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Xray使用"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">Xray使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xray使用基础使用"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">xray使用基础使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#功能"><span class="toc-nav-number">1.1.1.</span> <span class="toc-nav-text">功能</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#爬虫"><span class="toc-nav-number">1.1.2.</span> <span class="toc-nav-text">爬虫</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#服务扫描（漏扫）"><span class="toc-nav-number">1.1.3.</span> <span class="toc-nav-text">服务扫描（漏扫）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用案例"><span class="toc-nav-number">1.1.4.</span> <span class="toc-nav-text">使用案例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xray联动goby设置"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">xray联动goby设置</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#xray联动burp（没用过）"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">xray联动burp（没用过）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#参考"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">参考</span></a></li></ol>
             
           
           </div>
@@ -701,7 +719,7 @@ xray是什么？是一款扫描器，可以打poc，可以爬网站，很高效
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it wxx&#34;,&#34;🍀&#34;,&#34;🍂&#34;,&#34;🌈&#34;,&#34;🧿&#34;,&#34;🍁&#34;,&#34;🍇&#34;,&#34;🍍&#34;,&#34;🕌&#34;,&#34;⛩️&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it wxx&quot;,&quot;🍀&quot;,&quot;🍂&quot;,&quot;🌈&quot;,&quot;🧿&quot;,&quot;🍁&quot;,&quot;🍇&quot;,&quot;🍍&quot;,&quot;🕌&quot;,&quot;⛩️&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -711,6 +729,21 @@ xray是什么？是一款扫描器，可以打poc，可以爬网站，很高效
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
