@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>code-warrior</title>
+      <link href="/2022/05/22/code-warrior/"/>
+      <url>/2022/05/22/code-warrior/</url>
+      
+        <content type="html"><![CDATA[<h1 id="代码卫士"><a href="#代码卫士" class="headerlink" title="代码卫士"></a>代码卫士</h1><h2 id="php-laravel"><a href="#php-laravel" class="headerlink" title="php_laravel"></a>php_laravel</h2><h3 id="missing-functional-level-access-control"><a href="#missing-functional-level-access-control" class="headerlink" title="missing functional level access  control"></a>missing functional level access  control</h3><p>什么是缺少功能级别的控制访问：</p><ul><li>资源被未授权访问</li><li>用户可以执行他们未授权的服务器功能</li></ul><p>原因：</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vulfocus靶场wp</title>
       <link href="/2022/05/01/vulfocus%E9%9D%B6%E5%9C%BAwp/"/>
       <url>/2022/05/01/vulfocus%E9%9D%B6%E5%9C%BAwp/</url>
