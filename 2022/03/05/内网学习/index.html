@@ -120,8 +120,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">15.3k</span> and
-                                Reading Time <span class="post-count">60</span> Minutes
+                                Words <span class="post-count">15.5k</span> and
+                                Reading Time <span class="post-count">61</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -182,6 +182,13 @@
 
                         
                         <li>
+                            <a href="/PhoT_o/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/about/">About</a>
                         </li>
                         
@@ -189,7 +196,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -197,13 +204,6 @@
                         
                         <li>
                             <a href="/archive/">Archives</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -763,9 +763,19 @@ CLient 地址
 <p>PowerView.ps1下载地址 <a href="https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1" target="_blank" rel="noopener">https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1</a></p>
 <h3 id="域分析工具-BLOODHOUND"><a href="#域分析工具-BLOODHOUND" class="headerlink" title="域分析工具 BLOODHOUND"></a>域分析工具 BLOODHOUND</h3><p>使用BloodHound,可以快速、深人地了解活动目录中用户之间的关系，获取哪些用户具有管理员权限、哪些用户对所有的计算机都具有管理员权限、哪些用户是有效的用户组成员等信息。简而言之，可以加速查找域管理进程的过程</p>
 <p>要在本地搭建，windows有点麻烦，<a href="https://blog.csdn.net/qq_48904485/article/details/124403996" target="_blank" rel="noopener">我选择kali虚拟机</a>，wsl没成功，说是java问题喔</p>
-<p>太慢了吧也！</p>
+<p>太慢了吧也！下载好了，是我网卡，对不起</p>
+<p>配置还是比较简单，<a href="https://blog.csdn.net/qq_48904485/article/details/124403996" target="_blank" rel="noopener">跟着教程来就好</a></p>
+<p>装好后，还没有使用，因为还没有搭建环境，也没有遇到环境，可能接下来几天会遇到，前提是windows下的</p>
+<p>主要来说就是你还是需要获取三类信息给它本身：</p>
+<ul>
+<li>哪些用户登录了哪些机器?</li>
+<li>哪些用户拥有管理员权限?</li>
+<li>哪些用户和组属于哪些组?</li>
+</ul>
+<p>BloodHound需要的这三条信息依赖于PowerView.ps1脚本的BloodHound。</p>
+<p>BloodHound 分为两部分，一是PowerShell采集器脚本( 有两个版本，旧版本叫作BloodHound_ Old.ps1, 新版本叫作SharpHound.ps1 )，二是可执行文件SharpHound.exe。在大多数情况下，收集此信息不需要系统管理员权限。</p>
 <p><strong>参考</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.cnblogs.com&#x2F;21r000&#x2F;p&#x2F;15612307.html</span><br><span class="line">https:&#x2F;&#x2F;forum.butian.net&#x2F;share&#x2F;236</span><br><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;sycamorelg&#x2F;article&#x2F;details&#x2F;118727901https:&#x2F;&#x2F;m.freebuf.com&#x2F;articles&#x2F;network&#x2F;318148.html</span><br><span class="line">https:&#x2F;&#x2F;m.freebuf.com&#x2F;articles&#x2F;network&#x2F;318148.html</span><br><span class="line">https:&#x2F;&#x2F;timeshu.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E5%9F%9F%E7%AE%A1%E7%90%86%E5%91%98%E5%AE%9A%E4%BD%8D%E5%B7%A5%E5%85%B7&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_39885690&#x2F;article&#x2F;details&#x2F;110806869</span><br><span class="line">WMI：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;-qing-&#x2F;p&#x2F;10661480.html</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.cnblogs.com&#x2F;21r000&#x2F;p&#x2F;15612307.html</span><br><span class="line">https:&#x2F;&#x2F;forum.butian.net&#x2F;share&#x2F;236</span><br><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;sycamorelg&#x2F;article&#x2F;details&#x2F;118727901https:&#x2F;&#x2F;m.freebuf.com&#x2F;articles&#x2F;network&#x2F;318148.html</span><br><span class="line">https:&#x2F;&#x2F;m.freebuf.com&#x2F;articles&#x2F;network&#x2F;318148.html</span><br><span class="line">https:&#x2F;&#x2F;timeshu.github.io&#x2F;2020&#x2F;02&#x2F;08&#x2F;%E5%9F%9F%E7%AE%A1%E7%90%86%E5%91%98%E5%AE%9A%E4%BD%8D%E5%B7%A5%E5%85%B7&#x2F;</span><br><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_39885690&#x2F;article&#x2F;details&#x2F;110806869</span><br><span class="line">WMI：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;-qing-&#x2F;p&#x2F;10661480.html</span><br><span class="line">https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_48904485&#x2F;article&#x2F;details&#x2F;124403996</span><br></pre></td></tr></table></figure>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a><strong>Linux</strong></h2><p><strong>获取内核，操作系统和设备信息</strong></p>
 <div class="table-container">
 <table>
@@ -1526,7 +1536,7 @@ CLient 地址
                 
                 <div class="comment_notes">
                     <p>
-                        本博客所有文章除特别声明外，均采�? CC BY-SA 4.0 协议 ，转载请注明出处�?
+                        本博客所有文章除特别声明外，均采用CC BY-SA 4.0 协议 ，转载请注明出处！
                     </p>
                 </div>
                 
