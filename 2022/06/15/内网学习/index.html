@@ -20,7 +20,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://github.com/wxx0105/wxx0105.github.io/2022/03/05/内网学习/">
+    <link rel="canonical" href="https://github.com/wxx0105/wxx0105.github.io/2022/06/15/内网学习/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -114,7 +114,7 @@
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by wx_x on
-                            2022-03-05
+                            2022-06-15
                         </span>
 
                         
@@ -258,7 +258,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="这一篇文章可以当作手册，速查命令，特别关于内网信息收集"><a href="#这一篇文章可以当作手册，速查命令，特别关于内网信息收集" class="headerlink" title="这一篇文章可以当作手册，速查命令，特别关于内网信息收集"></a>这一篇文章可以当作手册，速查命令，特别关于内网信息收集</h1><h1 id="内网常见的名字解释"><a href="#内网常见的名字解释" class="headerlink" title="内网常见的名字解释"></a>内网常见的名字解释</h1><h2 id="工作组-Work-Group"><a href="#工作组-Work-Group" class="headerlink" title="工作组(Work Group)"></a>工作组(Work Group)</h2><p>最常见最简单最普通的资源管理模式，把电脑按照功能分别列入组中。</p>
+                <h1 id="这一篇文章可以当作手册，速查命令，特别关于内网信息收集"><a href="#这一篇文章可以当作手册，速查命令，特别关于内网信息收集" class="headerlink" title="这一篇文章可以当作手册，速查命令，特别关于内网信息收集"></a>这一篇文章可以当作手册，速查命令，特别关于内网信息收集</h1><p>一些内网攻击思路实战也有记录</p>
+<h1 id="内网常见的名字解释"><a href="#内网常见的名字解释" class="headerlink" title="内网常见的名字解释"></a>内网常见的名字解释</h1><h2 id="工作组-Work-Group"><a href="#工作组-Work-Group" class="headerlink" title="工作组(Work Group)"></a>工作组(Work Group)</h2><p>最常见最简单最普通的资源管理模式，把电脑按照功能分别列入组中。</p>
 <p>所有计算机<strong>平等</strong>，没有上下级管理关系，工作组网络也称之为对等网络</p>
 <p><code>因为其缺乏验证连入电脑的身份，所以只适用于中小型计算机网络</code></p>
 <p>大型网络需要统一的管理和集中的身份验证，并且能够给用户提供方便的搜索和使用网络资源的方式，于是域就出现了</p>
@@ -342,7 +343,7 @@
 </ol>
 <p><img src="https://s2.loli.net/2022/02/08/aHowC5b8SqnVUeM.png" alt="image-20220208133105850"></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NTLM v1与NTLM v2最显著的区别就是Challenge与加密算法不同，共同点就是加密的原料都是NTLM Hash。</span><br><span class="line">Challage:NTLM v1的Challenge有<span class="number">8</span>位，NTLM v2的Challenge为<span class="number">16</span>位。</span><br><span class="line">Net-NTLM Hash:NTLM v1的主要加密算法是DES，NTLM v2的主要加密算法是HMAC-MD5。</span><br></pre></td></tr></table></figure>
-<p>一些常用端口：（我的blog也有些许记录，但是还是不如下面的 总结实在）</p>
+<p>一些常用端口：（下面也有些许记录）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">53</span><br><span class="line">DNS服务，在使用中需要用到TCP&#x2F;UDP 53端口，AD域的核心就是DNS服务器，AD通过DNS服务器定位资源</span><br><span class="line">88</span><br><span class="line">Kerberos服务，在使用中需要用到TCP&#x2F;UDP 88端口，Kerberos密钥分发中心(KDC) 在该端口上侦听Ticket请求</span><br><span class="line">135</span><br><span class="line">135端口主要用于使用RPC协议并提供DCOM服务。</span><br><span class="line">137</span><br><span class="line">NetBIOS-NS(名称服务)，在使用中需要用到TCP&#x2F;UDP 137端口</span><br><span class="line">139</span><br><span class="line">Session Server(会话服务),在使用中需要用到TCP&#x2F;UDP 139端口，允许两台计算机建立连接</span><br><span class="line">389</span><br><span class="line">LDAP服务(轻量级目录访问协议)，在使用中需要用到TCP&#x2F;UDP 389端口，如果需要使用SSL，需要使用636端口，</span><br><span class="line">445</span><br><span class="line">主要用于共享文件夹或共享打印，存在较多漏洞，如MS08-067、MS17-010</span><br><span class="line">3268 Global Catalog(全局编录服务器)，如果需要使用SSL，需要用到3269端口，主要用于用户登录时，负责验证用户身份的域控制器需要通过防火</span><br><span class="line">墙，来向“全局编录”查询用户所隶属的通用组</span><br></pre></td></tr></table></figure>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>安全性较差，只需获得一个系统管理员的hash就可以直接拿个DC进行验证授权，账户名，用户名均已知</p>
 <h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
@@ -1519,13 +1520,9 @@ CLient 地址
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2022/03/06/pikachu/" data-toggle="tooltip" data-placement="top" title="pikachu">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2022/03/04/红日/" data-toggle="tooltip" data-placement="top" title="红日">Next Post &rarr;</a>
+                        <a href="/2022/05/22/code-warrior/" data-toggle="tooltip" data-placement="top" title="code-warrior">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -1890,7 +1887,7 @@ CLient 地址
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it wxx&#34;,&#34;🍀&#34;,&#34;🍂&#34;,&#34;🌈&#34;,&#34;🧿&#34;,&#34;🍁&#34;,&#34;🍇&#34;,&#34;🍍&#34;,&#34;🕌&#34;,&#34;⛩️&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it wxx&quot;,&quot;🍀&quot;,&quot;🍂&quot;,&quot;🌈&quot;,&quot;🧿&quot;,&quot;🍁&quot;,&quot;🍇&quot;,&quot;🍍&quot;,&quot;🕌&quot;,&quot;⛩️&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -1900,6 +1897,21 @@ CLient 地址
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
